@@ -5,7 +5,7 @@
 
 # files
 !/.gitignore
-!i3*/config
+!/i3*/config
 
 # folders
 !/nvim/
