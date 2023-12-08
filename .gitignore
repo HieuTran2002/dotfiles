@@ -2,5 +2,10 @@
 *
 
 # Except these
-!/nvim
+
+# files
 !/.gitignore
+
+# folders
+!/nvim/
+
