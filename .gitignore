@@ -8,6 +8,7 @@
 !/i3blocks/config
 !/i3status/config
 
+!/README.md
 # folders
 !/nvim/
 !/i3/
