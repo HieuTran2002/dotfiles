@@ -10,10 +10,10 @@ return require('packer').startup(function(use)
 
   -- Using Dracula theme:
   use {
-	  'daltonmenezes/aura-theme',
+	  'maxmx03/dracula.nvim',
 	  rtp = 'packages/neovim',
 	  config = function()
-		  vim.cmd("colorscheme aura-dark") -- Or any Aura theme available
+		  vim.cmd("colorscheme dracula") -- Or any Aura theme available
 	  end
   }
 

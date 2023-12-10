@@ -70,15 +70,22 @@ interval=30
 # The address cn be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
 #IFACE=wlan0
+#command=$SCRIPT_DIR/iface/iface
 color=#00FF00
 interval=10
 separator=false
 
+[Network]
+command=nmcli -t -f device,type,state con show --active | awk -F: '{if ($2=="802-11-wireless") print "直"; else if ($2=="802-3-ethernet") print ""; else print "睊"}'
+color=#8BE9FD
+interval=5
+separator=" | "
+
 [wifi]
+#command=$SCRIPT_DIR/wifi/wifi
 #INTERFACE=wlp3s0
-command=$SCRIPT_DIR/wifi/wifi
-label=wifi:
-interval=10
+label=wifi----------:
+interval=false
 separator=false
 
 [bandwidth]
@@ -105,7 +112,6 @@ interval=10
 [battery]
 label=BAT
 command=$SCRIPT_DIR/battery/battery
-color=#F1FA8C
 label=
 interval=30
 
