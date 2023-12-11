@@ -7,6 +7,7 @@
 !/.gitignore
 !/i3blocks/config
 !/i3status/config
+!/redshift.conf
 
 !/README.md
 # folders

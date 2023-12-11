@@ -76,7 +76,7 @@ interval=10
 separator=false
 
 [Network]
-command=nmcli -t -f device,type,state con show --active | awk -F: '{if ($2=="802-11-wireless") print "直"; else if ($2=="802-3-ethernet") print ""; else print "睊"}'
+command=nmcli -t -f device,type,state con show --active | awk -F: '{if ($2=="802-11-wireless") print "直"; else if ($2=="loopback") print ""; else print "睊"}'
 color=#8BE9FD
 interval=5
 separator=" | "
