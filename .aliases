@@ -1,0 +1,31 @@
+# shortcut
+alias dl="cd ~/Downloads"
+alias cl="clear"
+alias cf="cd ~/.config"
+alias blueon="bluetoothctl connect 41:42:FF:0F:82:40"
+alias blueoff="bluetoothctl disconnect"
+alias mount-f="udisksctl mount -b /dev/sda5"
+alias mount-e="udisksctl mount -b /dev/sda4"
+alias mount-d="udisksctl mount -b /dev/sda2"
+alias backlight_80="xrandr --output eDP-1 --brightness 0.8"
+alias backlight_60="xrandr --output eDP-1 --brightness 0.6"
+
+
+# apt 
+alias purge="sudo apt purge"
+alias install="sudo apt install"
+alias update="sudo apt update"
+
+# directory
+alias cd-f="/media/theuser/mount/Documents"
+alias cd-d="/media/theuser/mount/Downloads"
+alias cd-e="/media/theuser/mount/'NewVolume'"
+alias dir_applicatios="/usr/share/applications"
+alias dir_flatpak_apps="/var/lib/flatpak"
+
+## print current path
+
+# tmux redefine
+alias tmux-config="tmux new-session -c ~/.config -s config \; split-window -dh -p 30"
+
+alias tmux-cpp="tmux new-session -c /media/theuser/mount/Documents/Code/Cpp -s Cpp-with-me \; split-window -dh -p 30"
