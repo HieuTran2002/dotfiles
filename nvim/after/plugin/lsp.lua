@@ -12,6 +12,7 @@ end)
 ---
 require('lspconfig').lua_ls.setup({})
 require('lspconfig').pylsp.setup({})
+require('lspconfig').clangd.setup({})
 
 --- CMP only
 

@@ -8,9 +8,11 @@
 !/i3blocks/config
 !/i3status/config
 !/redshift.conf
-
+!fstab
 !/README.md
+
 # folders
+!/tmux/tmux.conf
 !/nvim/
 !/i3/
 

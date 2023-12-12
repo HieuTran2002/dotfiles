@@ -72,4 +72,7 @@ return require('packer').startup(function(use)
   use{
 	  "hrsh7th/nvim-cmp"
   }
+
+  --- vim tmux navigator
+  use {'christoomey/vim-tmux-navigator'}
 end)
