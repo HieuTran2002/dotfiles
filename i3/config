@@ -1,10 +1,9 @@
 # i3 config file (v4)
 #
 
-
 #### User settings session, where alot of shit happen
 
-# startup
+ # startup
 exec compton
 exec nitrogen --restore &
 
