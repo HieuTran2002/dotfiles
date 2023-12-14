@@ -164,7 +164,7 @@ workspace 13 output $sm
 workspace 14 output $sm
 workspace 15 output $sm
 
-set $ws1 "1: Terminal" 
+set $ws1 "1: | Terminal | " 
 set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"

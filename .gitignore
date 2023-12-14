@@ -6,6 +6,7 @@
 # files
 !/.gitignore
 !/i3blocks/config
+!/compton.conf
 !/i3status/config
 !/redshift.conf
 !fstab
