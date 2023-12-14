@@ -62,11 +62,20 @@ return require('packer').startup(function(use)
   }
 
   --- Mason
-  
   use {
-	  "williamboman/mason.nvim",
-	  "williamboman/mason-lspconfig.nvim",
-	  "neovim/nvim-lspconfig",
+      {
+          "williamboman/mason.nvim",
+          opts = {
+              ensure_installed = {
+                  "clangd",
+                  "pylsp",
+                  "lua_lsp",
+                  "codelldb",
+              }
+          }
+      },
+      "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig",
   }
   --- cmp
   use{
@@ -75,4 +84,45 @@ return require('packer').startup(function(use)
 
   --- vim tmux navigator
   use {'christoomey/vim-tmux-navigator'}
-end)
+
+  --- debugger
+  use 
+  {
+      'mfussenegger/nvim-dap',
+      config = function(_, _)
+
+      end
+  }
+  use 'theHamsta/nvim-dap-virtual-text'
+  use
+  {
+      "williamboman/mason.nvim",
+  }
+  use 
+  {
+      "jay-babu/mason-nvim-dap.nvim",
+      opts = {
+          handlers = {},
+          ensure_installed = {
+              "codelldb",
+          }
+      }
+  }
+  use { "rcarriga/nvim-dap-ui",
+        requires = {"mfussenegger/nvim-dap"},
+        config = function()
+            local dap, dapui = require("dap"), require("dapui")
+            dap.listeners.after.event_initialized["dapui_config"] = function()
+                dapui.open()
+            end
+            dap.listeners.before.event_terminated["dapui_config"] = function()
+                dapui.close()
+            end
+            dap.listeners.before.event_exited["dapui_config"] = function()
+                dapui.close()
+            end
+        end
+    }
+
+end) 
+
