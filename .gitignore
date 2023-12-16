@@ -15,6 +15,7 @@
 
 # folders
 !/tmux/tmux.conf
+!/custome-cli-cmd
 !/nvim/
 !/i3/
 !/rofi/

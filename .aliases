@@ -1,15 +1,14 @@
 # shortcut
 alias dl="cd ~/Downloads"
-alias cl="clear"
+alias cl="clear; task"
 alias cf="cd ~/.config"
-alias blueon="bluetoothctl connect 41:42:FF:0F:82:40"
-alias blueoff="bluetoothctl disconnect"
 alias mount-f="udisksctl mount -b /dev/sda5"
 alias mount-e="udisksctl mount -b /dev/sda4"
 alias mount-d="udisksctl mount -b /dev/sda2"
-alias backlight_80="xrandr --output eDP-1 --brightness 0.8"
-alias backlight_60="xrandr --output eDP-1 --brightness 0.6"
 
+# grep
+alias grepi="grep -i "
+alias installed-grep="apt list --installed | grep -i "
 
 # apt 
 alias purge="sudo apt purge"
@@ -20,10 +19,16 @@ alias update="sudo apt update"
 alias cd-f="/media/theuser/mount/Documents"
 alias cd-d="/media/theuser/mount/Downloads"
 alias cd-e="/media/theuser/mount/'NewVolume'"
-alias dir_applicatios="/usr/share/applications"
-alias dir_flatpak_apps="/var/lib/flatpak"
+alias cd-toeic="/media/theuser/mount/Documents/Documents/'TOEIC 33'"
+alias cd-book="/media/theuser/mount/Documents/Documents/Book"
+alias cd-wallpaper-local="/home/theuser/Pictures/wallpaper"
+alias cd-wallpaper-F="/media/theuser/mount/Documents/background"
 
-## print current path
+## code
+
+## copy current path
+
+# service control
 
 # tmux redefine
 alias tmux-config="tmux new-session -c ~/.config -s config \; split-window -dh -p 30"
