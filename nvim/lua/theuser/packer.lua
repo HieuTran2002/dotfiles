@@ -94,10 +94,6 @@ return require('packer').startup(function(use)
       end
   }
   use 'theHamsta/nvim-dap-virtual-text'
-  use
-  {
-      "williamboman/mason.nvim",
-  }
   use 
   {
       "jay-babu/mason-nvim-dap.nvim",
@@ -122,6 +118,12 @@ return require('packer').startup(function(use)
                 dapui.close()
             end
         end
+    }
+
+    --- auto pair
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
     }
 
 end) 

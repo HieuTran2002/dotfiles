@@ -7,7 +7,7 @@ alias mount-e="udisksctl mount -b /dev/sda4"
 alias mount-d="udisksctl mount -b /dev/sda2"
 
 # grep
-alias grepi="grep -i "
+
 alias installed-grep="apt list --installed | grep -i "
 
 # apt 
@@ -23,6 +23,8 @@ alias cd-toeic="/media/theuser/mount/Documents/Documents/'TOEIC 33'"
 alias cd-book="/media/theuser/mount/Documents/Documents/Book"
 alias cd-wallpaper-local="/home/theuser/Pictures/wallpaper"
 alias cd-wallpaper-F="/media/theuser/mount/Documents/background"
+alias cd-cpp="/media/theuser/mount/Documents/Code/Cpp"
+alias cd-python="/media/theuser/mount/Documents/Code/python"
 
 ## code
 
