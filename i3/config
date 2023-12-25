@@ -6,10 +6,6 @@ set $sup Mod4
 set $mod Mod1 
 
  # startup
-exec compton &
-
-exec redshift &
-exec nitrogen --restore &
 exec /home/theuser/.config/startup.sh
 
 
@@ -91,7 +87,8 @@ bindsym $sup+Shift+q kill
 #bindsym $sup+d exec --no-startup-id dmenu_run
 #bindsym $sup+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'JetBrains Mono-14' -p 'Panda'"
 
-bindsym $sup+d exec "rofi -modi drun,run -show drun"
+# bindsym $sup+d exec "rofi -modi drun,run -show drun"
+bindsym $sup+space exec "~/.config/rofi/launcher.sh"
 
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # bindsym $sup+d exec --no-startup-id i3-dmenu-desktop
@@ -138,7 +135,7 @@ bindsym $sup+e layout toggle split
 bindsym $sup+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $sup+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $sup+a focus parent
@@ -170,8 +167,8 @@ workspace 13 output $sm
 workspace 14 output $sm
 workspace 15 output $sm
 
-set $ws1 "1: Terminal " 
-set $ws2 "2"
+set $ws1 "1: Obsidian"
+set $ws2 "2: Terminal" 
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
