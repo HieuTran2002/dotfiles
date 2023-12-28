@@ -1,5 +1,43 @@
-# backlight
+#!/bin/bash
 
+# auto run
+task
+
+function timeleft()
+{
+    #!/bin/bash
+    # Get the current time in seconds since epoch
+    current_time=$(date +%s)
+
+    # Get the time at midnight in seconds since epoch
+    midnight_time=$(date -d "tomorrow 00:00:00" +%s)
+
+    # Calculate the difference between the two times in seconds
+    time_diff=$((midnight_time - current_time))
+
+    # Convert the time difference to hours and minutes
+    hours=$((time_diff / 3600))
+    minutes=$(( (time_diff % 3600) / 60 ))
+
+    # Print the time left until midnight
+    RED='\033[0;32m'
+    NOCOLOR='\033[0m'
+    BOLD=$(tput bold)
+    NORMAL=$(tput sgr0)
+    echo "You have ${RED}${BOLD}$hours hours and $minutes minutes${NOCOLOR}${NORMAL} left. Do your best!"
+}
+timeleft
+
+# better clear
+function cl()
+{
+    clear
+    task
+    timeleft
+}
+
+
+# backlight
 function backlight() 
 {
     if [[ $1 -lt 10 ]]
@@ -39,6 +77,7 @@ function blue-disconnect
 {
     bluetoothctl disconnect
 }
+
 
 # get path
 function path2clip {
