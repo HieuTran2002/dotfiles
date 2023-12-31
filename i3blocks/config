@@ -48,7 +48,7 @@ signal=10
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=MEM
+label=RAM
 command=$SCRIPT_DIR/memory/memory
 color=#50FA7B
 separator=false
@@ -118,8 +118,8 @@ interval=30
 # Date Time
 #
 [time]
-command=date '+%Y-%m-%d %H:%M'
-color=#BD93F9
+command=date '+%Y-%m-%d  %H:%M'
+color=#F1FA8C
 interval=5
 
 # Generic media player support

@@ -37,6 +37,7 @@ alias tmux-config="tmux new-session -c ~/.config -s config"
 alias tmux-main="tmux new-session -s main"
 alias tmux-cpp="tmux new-session -c /media/theuser/mount/Documents/Code/Cpp -s Cpp-with-me \; split-window -dh -p 30"
 alias tmux-go="tmux new-session -c /media/theuser/mount/Documents/Code/go -s Go-with-me \; split-window -dh -p 30"
+alias tmux-reattact="tmux a -t "
 
 # golang
 alias getgo="export PATH=$PATH:/usr/local/go/bin"
