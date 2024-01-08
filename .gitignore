@@ -12,7 +12,7 @@
 !fstab
 !/README.md
 !/.aliases
-
+!/qutebrowser/config.py
 # folders
 !/tmux/tmux.conf
 !/custome-cli-cmd

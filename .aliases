@@ -6,13 +6,13 @@ alias mount-e="udisksctl mount -b /dev/sda4"
 alias mount-d="udisksctl mount -b /dev/sda2"
 
 # grep
-
 alias installed-grep="apt list --installed | grep -i "
 
 # apt 
 alias purge="sudo apt purge"
 alias install="sudo apt install"
 alias update="sudo apt update"
+
 
 # directory
 alias cd-f="/media/theuser/mount/Documents"
@@ -24,7 +24,7 @@ alias cd-wallpaper-local="/home/theuser/Pictures/wallpaper"
 alias cd-wallpaper-F="/media/theuser/mount/Documents/background"
 alias cd-cpp="/media/theuser/mount/Documents/Code/Cpp"
 alias cd-python="/media/theuser/mount/Documents/Code/python"
-alias cd-ython="/media/theuser/mount/Documents/Code/go"
+alias cd-go="/media/theuser/mount/Documents/Code/go"
 
 ## code
 
@@ -38,6 +38,10 @@ alias tmux-main="tmux new-session -s main"
 alias tmux-cpp="tmux new-session -c /media/theuser/mount/Documents/Code/Cpp -s Cpp-with-me \; split-window -dh -p 30"
 alias tmux-go="tmux new-session -c /media/theuser/mount/Documents/Code/go -s Go-with-me \; split-window -dh -p 30"
 alias tmux-reattact="tmux a -t "
+alias tmux-python="tmux new-session -c /media/theuser/mount/Documents/Code/python -s Python-with-me" 
 
 # golang
 alias getgo="export PATH=$PATH:/usr/local/go/bin"
+
+# pulseaudio
+alias unmute="amixer set Master unmute"
