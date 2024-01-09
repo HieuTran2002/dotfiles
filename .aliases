@@ -45,3 +45,6 @@ alias getgo="export PATH=$PATH:/usr/local/go/bin"
 
 # pulseaudio
 alias unmute="amixer set Master unmute"
+
+# check memory usage
+alias topmem="top -o %MEM"
