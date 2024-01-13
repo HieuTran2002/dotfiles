@@ -91,11 +91,12 @@ function lsgrep()
     ls | grep -i "$1"
 }
 
+ls
+
 function lswcgrep()
 {
     ls | grep -i "$1" | wc -l
 }
-
 
 
 function monitor()

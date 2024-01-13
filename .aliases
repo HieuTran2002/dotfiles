@@ -5,6 +5,10 @@ alias pic="$HOME/Pictures"
 alias vid="$HOME/Videos"
 alias home="$HOME"
 
+# ls
+alias lsh="ls -lh -lS"
+alias lsl="ls -ltr"
+
 # grep
 alias installed-grep="apt list --installed | grep -i "
 

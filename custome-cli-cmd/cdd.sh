@@ -14,6 +14,8 @@ function _cdd()
                 nvim
                 i3
                 go
+                toeic
+                todo
                 robo2"
       ;;
    *)
@@ -60,6 +62,14 @@ fuction cdd()
 
         "i3")
             cd "/home/theuser/.config/i3"
+            ;;
+
+        "toeic")
+            cd "/media/theuser/mount/Documents/Documents/TOEIC 33/document"
+            ;;
+
+        "todo")
+            cd "/media/theuser/mount/Documents/Obsidian/My Vault/Daily Note"
             ;;
         *)
             ;;

@@ -64,7 +64,7 @@ c.auto_save.session = True
 
 # Automatically start playing `<video>` elements.
 # Type: Bool
-c.content.autoplay = False
+c.content.autoplay = True
 
 # Which cookies to accept. With QtWebEngine, this setting also controls
 # other features with tracking capabilities similar to those of cookies;
@@ -227,6 +227,12 @@ config.set('content.images', True, 'chrome-devtools://*')
 # Type: Bool
 config.set('content.images', True, 'devtools://*')
 
+# Allow JavaScript to read from or write to the clipboard. With
+# QtWebEngine, writing the clipboard as response to a user interaction
+# is always allowed.
+# Type: Bool
+c.content.javascript.can_access_clipboard = True
+
 # Enable JavaScript.
 # Type: Bool
 config.set('content.javascript.enabled', True, 'chrome-devtools://*')
@@ -248,9 +254,32 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 # Type: Bool
 c.scrolling.smooth = False
 
+# Search engines which can be used via the address bar.  Maps a search
+# engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
+# placeholder. The placeholder will be replaced by the search term, use
+# `{{` and `}}` for literal `{`/`}` braces.  The following further
+# placeholds are defined to configure how special characters in the
+# search terms are replaced by safe characters (called 'quoting'):  *
+# `{}` and `{semiquoted}` quote everything except slashes; this is the
+# most   sensible choice for almost all search engines (for the search
+# term   `slash/and&amp` this placeholder expands to `slash/and%26amp`).
+# * `{quoted}` quotes all characters (for `slash/and&amp` this
+# placeholder   expands to `slash%2Fand%26amp`). * `{unquoted}` quotes
+# nothing (for `slash/and&amp` this placeholder   expands to
+# `slash/and&amp`). * `{0}` means the same as `{}`, but can be used
+# multiple times.  The search engine named `DEFAULT` is used when
+# `url.auto_search` is turned on and something else than a URL was
+# entered to be opened. Other search engines can be used by prepending
+# the search engine name to the search term, e.g. `:open google
+# qutebrowser`.
+# Type: Dict
+c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
+                       'yt': 'https://www.youtube.com/results?search_query={}',
+                       'invidious': 'https://invidious.flokinet.to/search?q={}',
+                       'oxford': 'https://www.oxfordlearnersdictionaries.com/definition/english/{}'}
+
 # Default zoom level.
 # Type: Perc
-
 c.zoom.default = '125%'
 
 # Background color of unselected odd tabs.
