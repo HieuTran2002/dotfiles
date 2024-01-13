@@ -24,7 +24,7 @@ function timeleft()
     NOCOLOR='\033[0m'
     BOLD=$(tput bold)
     NORMAL=$(tput sgr0)
-    echo "You have ${RED}${BOLD}$hours hours and $minutes minutes${NOCOLOR}${NORMAL} left. Do your best!"
+    echo "${RED}${BOLD}$hours : $minutes h ${NOCOLOR}${NORMAL} left."
 }
 timeleft
 
@@ -80,13 +80,30 @@ function blue-disconnect
 
 
 # get path
-function path2clip {
+function yy {
     echo $(pwd) | xclip -sel clip
 }
 
 
 # utils with grep
-function grepls()
+function lsgrep()
 {
     ls | grep -i "$1"
+}
+
+function lswcgrep()
+{
+    ls | grep -i "$1" | wc -l
+}
+
+
+
+function monitor()
+{
+    if [ $1 -eq '1' ]; then
+        xrandr --output HDMI-1 --off
+    elif [ $1 -eq '2' ]; then
+        xrandr --output eDP-1 --mode 1920x1080
+        xrandr --output HDMI-1 --mode 1360x768 --right-of eDP-1
+    fi
 }

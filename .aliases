@@ -1,9 +1,9 @@
 # shortcut
-alias dl="cd ~/Downloads"
-alias cf="cd ~/.config"
-alias mount-f="udisksctl mount -b /dev/sda5"
-alias mount-e="udisksctl mount -b /dev/sda4"
-alias mount-d="udisksctl mount -b /dev/sda2"
+alias dl="~/Downloads"
+alias cf="~/.config"
+alias pic="$HOME/Pictures"
+alias vid="$HOME/Videos"
+alias home="$HOME"
 
 # grep
 alias installed-grep="apt list --installed | grep -i "
@@ -15,6 +15,7 @@ alias update="sudo apt update"
 
 
 # directory
+alias cd-obsidian="/media/theuser/mount/Documents/Obsidian/My Vault"
 alias cd-f="/media/theuser/mount/Documents"
 alias cd-d="/media/theuser/mount/Downloads"
 alias cd-e="/media/theuser/mount/'NewVolume'"

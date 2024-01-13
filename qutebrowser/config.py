@@ -248,6 +248,11 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 # Type: Bool
 c.scrolling.smooth = False
 
+# Default zoom level.
+# Type: Perc
+
+c.zoom.default = '125%'
+
 # Background color of unselected odd tabs.
 # Type: QtColor
 c.colors.tabs.odd.bg = 'black'
@@ -346,9 +351,7 @@ c.colors.webpage.darkmode.threshold.background = 50
 c.bindings.key_mappings = {'<Ctrl+6>': '<Ctrl+^>', '<Ctrl+Enter>': '<Ctrl+Return>', '<Ctrl+i>': '<Tab>', '<Ctrl+j>': '<Return>', '<Ctrl+m>': '<Return>', '<Ctrl+[>': '<Escape>', '<Enter>': '<Return>', '<Shift+Enter>': '<Return>', '<Shift+Return>': '<Return>'}
 
 # Bindings for normal mode
+config.bind('+', '<zoom-in>')
 config.bind('<Ctrl+j>', ':tab-move +')
 config.bind('<Ctrl+k>', ':tab-move -')
-config.unbind('d')
-config.unbind('u')
-config.bind('x', 'tab-close')
-config.bind('z', 'undo')
+config.bind('=', 'zoom-in')
