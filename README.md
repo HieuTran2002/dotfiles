@@ -1,2 +1,3 @@
 # Setup for Debian 12 - i3
-- Neovim is from snap, debian's default ppa still stuck at 0.7
+- Qutebrowser adblock dependency install with --break-system-packages flag
+
