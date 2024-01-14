@@ -273,10 +273,7 @@ c.scrolling.smooth = False
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}',
-                       'yt': 'https://www.youtube.com/results?search_query={}',
-                       'invidious': 'https://invidious.flokinet.to/search?q={}',
-                       'oxford': 'https://www.oxfordlearnersdictionaries.com/definition/english/{}'}
+c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'yt': 'https://www.youtube.com/results?search_query={}', 'invidious': 'https://invidious.flokinet.to/search?q={}', 'oxford': 'https://www.oxfordlearnersdictionaries.com/definition/english/{}'}
 
 # Default zoom level.
 # Type: Perc
@@ -384,3 +381,5 @@ config.bind('+', '<zoom-in>')
 config.bind('<Ctrl+j>', ':tab-move +')
 config.bind('<Ctrl+k>', ':tab-move -')
 config.bind('=', 'zoom-in')
+config.unbind('d')
+config.bind('x', 'tab-close')

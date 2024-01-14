@@ -9,6 +9,7 @@ set $mod Mod1
 exec /home/theuser/.config/startup.sh
 
 
+
 # color
 client.focused          #6272A4 #6272A4 #F8F8F2 #FF79C6   #FF79C6 
 # client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #FFC0D9

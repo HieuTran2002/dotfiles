@@ -6,7 +6,7 @@ alias vid="$HOME/Videos"
 alias home="$HOME"
 
 # ls
-alias lsh="ls -lh -lS"
+alias lsh="ls -lh -lS -r"
 alias lsl="ls -ltr"
 
 # grep

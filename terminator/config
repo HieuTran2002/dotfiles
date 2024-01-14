@@ -1,0 +1,33 @@
+[global_config]
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
+  always_split_with_profile = True
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 1.0
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+  [[Dracula]]
+    background_color = "#282a36"
+    background_darkness = 0.75
+    cursor_bg_color = "#aaaaaa"
+    font = JetBrainsMono Nerd Font 18
+    foreground_color = "#f8f8f2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#44475a:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#94a3a5:#282a36:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#ffffff"
+    custom_command = task
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = Dracula
+      command = ""
+[plugins]

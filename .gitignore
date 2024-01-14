@@ -13,10 +13,11 @@
 !/README.md
 !/.aliases
 !/qutebrowser/config.py
+!/terminator/config
 
 # folders
-!/tmux/tmux.conf
 !/custome-cli-cmd
+!/tmux/
 !/nvim/
 !/i3/
 !/rofi/
