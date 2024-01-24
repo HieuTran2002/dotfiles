@@ -9,6 +9,7 @@ function _cdd()
       words="   obsidian
                 python
                 book
+                ln
                 cpp
                 tmux
                 nvim
@@ -34,6 +35,10 @@ fuction cdd()
 
         "book")
             cd "/media/theuser/mount/Documents/Documents/Book"
+            ;;
+
+        "ln")
+            cd "/media/theuser/mount/Documents/Documents/Book/LightNovel"
             ;;
 
         "cpp")

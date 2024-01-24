@@ -14,6 +14,7 @@
 !/.aliases
 !/qutebrowser/config.py
 !/terminator/config
+!/.dircolors
 
 # folders
 !/custome-cli-cmd

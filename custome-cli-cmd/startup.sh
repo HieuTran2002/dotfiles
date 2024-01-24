@@ -26,7 +26,20 @@ function timeleft()
     NORMAL=$(tput sgr0)
     echo "${RED}${BOLD}$hours : $minutes h ${NOCOLOR}${NORMAL} left."
 }
+
 timeleft
+
+# mute / unmute
+function mute()
+{
+    amixer set Master mute
+}
+
+function unmute()
+{
+    amixer set Master unmute
+}
+
 
 # better clear
 function cl()
@@ -63,6 +76,8 @@ function blue-reset {
 
 function blue-connect 
 {
+
+    mute
     bluetoothctl connect $HEADSET
 
     # if no connection, wait
@@ -70,6 +85,9 @@ function blue-connect
     echo "Volume adjusting"
     sleep 1
     pactl -- set-sink-volume $(pactl list short sinks | grep -i "bluez" | awk '{print $1}') 20%
+
+    unmute
+
     echo "Done"
 }
 
@@ -91,7 +109,6 @@ function lsgrep()
     ls | grep -i "$1"
 }
 
-ls
 
 function lswcgrep()
 {

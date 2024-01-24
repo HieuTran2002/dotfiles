@@ -193,7 +193,7 @@ config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/53
 # lists.  The file `~/.config/qutebrowser/blocked-hosts` is always read
 # if it exists.
 # Type: List of Url
-c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
+c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters.txt']
 
 # Which method of blocking ads should be used.  Support for Adblock Plus
 # (ABP) syntax blocklists using Brave's Rust library requires the
@@ -381,5 +381,6 @@ config.bind('+', '<zoom-in>')
 config.bind('<Ctrl+j>', ':tab-move +')
 config.bind('<Ctrl+k>', ':tab-move -')
 config.bind('=', 'zoom-in')
+config.unbind('co')
 config.unbind('d')
 config.bind('x', 'tab-close')

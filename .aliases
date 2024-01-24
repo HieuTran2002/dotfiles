@@ -4,8 +4,14 @@ alias cf="~/.config"
 alias pic="$HOME/Pictures"
 alias vid="$HOME/Videos"
 alias home="$HOME"
+alias c="clear"
+alias rg="ranger"
+
+# app
+alias nv="nvim"
 
 # ls
+alias l="lsd"
 alias lsh="ls -lh -lS -r"
 alias lsl="ls -ltr"
 
@@ -39,7 +45,7 @@ alias cd-go="/media/theuser/mount/Documents/Code/go"
 
 # tmux redefine
 alias tmux-config="tmux new-session -c ~/.config -s config"
-alias tmux-main="tmux new-session -s main"
+alias tmux-main="tmux new-session -s Main"
 alias tmux-cpp="tmux new-session -c /media/theuser/mount/Documents/Code/Cpp -s Cpp-with-me \; split-window -dh -p 30"
 alias tmux-go="tmux new-session -c /media/theuser/mount/Documents/Code/go -s Go-with-me \; split-window -dh -p 30"
 alias tmux-reattact="tmux a -t "
