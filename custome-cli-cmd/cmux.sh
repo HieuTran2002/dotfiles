@@ -1,83 +1,59 @@
-function _cmux()
-{
-  latest="${COMP_WORDS[$COMP_CWORD]}"
-  prev="${COMP_WORDS[$COMP_CWORD - 1]}"
-  words=""
+#!/bin/bash
 
-  case "${prev}" in
-    cmux)
-      words="   main
-                python
-                "
-      ;;
-   *)
-      ;;
-  esac
-  COMPREPLY=($(compgen -W "$words" -- $latest))
-  return 0
-}
+# List of pre-set session names
+SESSIONS=("main" "python-with-me" "cpp-with-me")
 
-cmux_main() {
-    if command -v tmux &> /dev/null; then
-        local session_name="Main"
-
-        # Check if the session already exists
-        if tmux has-session -t $session_name &> /dev/null; then
-            echo "Session '$session_name' already exists. Attaching to it."
-            tmux attach-session -t $session_name
-        else
-            # Create a new tmux session named 'Home' with 'Main' and 'Doc' windows
-            tmux new-session -d -s $session_name -n Main
-            tmux new-window -t $session_name: -n Doc
-
-            # Attach to the 'Home' session
-            tmux select-window -t $session_name:Main
-            tmux attach-session -t $session_name
-        fi
-    else
-        echo "tmux is not installed. Please install tmux and try again."
-    fi
-}
-cmux_python() {
-    if command -v tmux &> /dev/null; then
-        local session_name="Python"
-
-        # Check if the session already exists
-        if tmux has-session -t $session_name &> /dev/null; then
-            echo "Session '$session_name' already exists. Attaching to it."
-            tmux attach-session -t $session_name
-        else
-            # Create a new tmux session named 'Home' with 'Main' and 'Doc' windows
-            tmux new-session -d -s $session_name -n Term
-            tmux new-window -t $session_name: -n Nvim
-
-            # Attach to the 'Home' session
-            tmux select-window -t $session_name:Main
-            tmux attach-session -t $session_name
-        fi
-    else
-        echo "tmux is not installed. Please install tmux and try again."
-    fi
-
-    echo "Done"
-}
-
-fuction cmux() 
-{
-    case "$1" in
+# Function to start a tmux session based on the given session name
+start_session() {
+    local session_name="$1"
+    
+    case "$session_name" in
         "main")
-            cmux_main()
-            return 0
+            tmux new-session -s "$session_name" -n "Term" \; new-window -n "Doc" \; new-window -n "Tensura" \; select-window -t 1
             ;;
-
-        "python")
-            cmux_python()
-            return 0
+        "python-with-me" | "cpp-with-me")
+            tmux new-session -s "$session_name" -n "Term" \; new-window -n "Neovim"\; select-window -t 1
             ;;
         *)
+            echo "Unknown session: $session_name"
             ;;
     esac
-    return 0
 }
+
+# Function for tab-completion
+_cmux() {
+    COMPREPLY=()
+    local cur="${COMP_WORDS[COMP_CWORD]}"
+    local prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    # If the previous word is 'cmux', provide session names for completion
+    if [ "$prev" == "cmux" ]; then
+        COMPREPLY=($(compgen -W "${SESSIONS[*]}" -- "$cur"))
+        return 0
+    fi
+}
+
+# Register the completion function for cmux
 complete -F _cmux cmux
+
+# Main function to handle cmux command
+cmux() {
+    local session_name="$1"
+
+    # If no session name provided, display a list of available sessions
+    if [ -z "$session_name" ]; then
+        echo "Available sessions: ${SESSIONS[@]}"
+        return 1
+    fi
+
+    # Check if the provided session name is valid
+    if [[ " ${SESSIONS[@]} " =~ " $session_name " ]]; then
+        start_session "$session_name"
+    else
+        echo "Invalid session name. Available sessions: ${SESSIONS[@]}"
+    fi
+}
+
+# Uncomment the following line if you want to start a default session when 'cmux' is called without arguments
+# cmux "Main"
 

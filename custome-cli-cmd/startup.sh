@@ -51,11 +51,37 @@ function cl()
 
 
 # backlight
-function backlight() 
-{
+function backlight() {
     if [[ $1 -lt 10 ]]
     then
         xrandr --output eDP-1 --brightness "0.$1"
+    else
+        echo "No greater than 10, dumbass"
+    fi
+}
+
+# function backlight() 
+# {
+# 
+#     local id = ""
+#     if [ "$1" == "1" ]; then
+#         id = "eDP-1"
+#     elif [ "$1" == "2"]; then
+#         id = "HDMI-1"
+#     fi
+# 
+#     if [[ $2 -lt 10 ]]
+#     then
+#         xrandr --output "$id" --brightness "0.$1"
+#     else
+#         echo "No greater than 10, dumbass"
+#     fi
+# }
+function backlight2() 
+{
+    if [[ $1 -lt 10 ]]
+    then
+        xrandr --output HDMI-1 --brightness "0.$1"
     else
         echo "No greater than 10, dumbass"
     fi

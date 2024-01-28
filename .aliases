@@ -10,6 +10,12 @@ alias rg="ranger"
 # app
 alias nv="nvim"
 
+# nmcli 
+alias ncs="nmcli con show"
+alias ncu="nmcli con up"
+
+
+
 # ls
 alias l="lsd"
 alias lsh="ls -lh -lS -r"
