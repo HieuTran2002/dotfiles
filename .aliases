@@ -11,8 +11,8 @@ alias rg="ranger"
 alias nv="nvim"
 
 # nmcli 
-alias ncs="nmcli con show"
-alias ncu="nmcli con up"
+alias nets="nmcli con show"
+alias netu="nmcli con up"
 
 
 

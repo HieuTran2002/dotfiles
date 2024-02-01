@@ -281,7 +281,7 @@ bar {
 		}
 	font pango:Hack Nerd Font 12
 	position top
-	tray_output none
+	tray_output primary
 }
 
 #######################################################################
